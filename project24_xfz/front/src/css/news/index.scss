@@ -1,0 +1,146 @@
+@import "../common/init";
+@import "../common/header";
+@import "../common/footer";
+@import "../common/side-bar";
+@import "../common/body";
+@import "../common/news_list.scss";
+
+
+.main{
+    .wrapper{
+        .main-content-wrapper{
+            .banner-group{
+                overflow: hidden;
+                width: 100%;
+                height: $bannerHeight;
+                background: #0e275e;
+                position:relative;
+
+                .arrow {
+                  position: absolute;
+                  cursor: pointer;
+                  font-size: 100px;
+                  color: #ffffff;
+                  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                  margin-top: -100px;
+                  top: 70%;
+                  display: none;
+                }
+
+                .arrow-prev{
+                  left: 20px;
+                }
+
+                .arrow-next{
+                    left: 742px;
+                }
+
+                .banner-ul{
+                    width: $bannerWidth * 4;
+                    position: absolute;
+
+                    li{
+                        float: left;
+                        width: $bannerWidth;
+                        height: $bannerHeight;
+
+
+                        img{
+                            width: $bannerWidth;
+                            height: $bannerHeight;
+                        }
+                    }
+                }
+
+                .page-control-group{
+                    bottom: 20px;
+                    left: 0;
+                    right: 0;
+                    position: absolute;
+
+                    .page-control{
+                        margin: 0 auto;
+                        overflow: hidden;
+
+                        li{
+                            width: 10px;
+                            height: 10px;
+                            float: left;
+                            margin: 0 8px;
+                            border-radius: 50%;
+                            border: 1px;
+                            box-sizing: border-box;
+                            cursor: pointer;
+                            background: #ffffff;
+
+                            &.active{
+                                background: gray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main{
+    .wrapper{
+        .main-content-wrapper{
+            .outer-group{
+                margin-top: 40px;
+                background: #fff;
+                .list-tag{
+                    width: $bannerWidth;
+                    height: 66px;
+                    border: 1px solid #eeeeee;
+                    border-left: none;
+                    border-right: none;
+                    li{
+                        margin-top: 22px;
+                        float: left;
+                        padding: 0 15px;
+                        a{
+                            color: #878787;
+                            text-decoration: none;
+                        }
+                        &:first-of-type{
+                            margin-left: 20px;
+                            border-left:5px solid #5c87d9;
+                        }
+                        &.active{
+                             a{
+                                color: #212121;
+                            }
+                        }
+
+                    }
+                }
+
+                .inner-group{
+                    width: $bannerWidth;
+                    border-bottom: 1px solid #eeeeee;
+                    @include news_list;
+                }
+                
+                .load-more-group{
+                    padding: 20px 0;
+                    text-align: center;
+                    .load-more{
+                        background: #d2dcea;
+                        color: #6d85ac;
+                        width: 402px;
+                        height: 40px;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+

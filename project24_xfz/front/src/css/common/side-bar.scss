@@ -1,0 +1,138 @@
+@import "init";
+
+.main{
+    .wrapper{
+        .sidebar-wrapper{
+            width: 356px;
+            float: right;
+            background: #fff;
+            .title-group{
+                padding: 20px;
+                .title{
+                    float: left;
+                    font-size: 18px;
+                }
+                .more{
+                    float: right;
+                    font-size:14px;
+                }
+            }
+            .advertise-group {
+                padding: 20px;
+
+                .advertise {
+                    width: 315px;
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 177px;
+                    }
+                }
+            }
+            .platform-group{
+                width: 315px;
+                .focus-group{
+                    padding: 20px;
+                    width: 100%;
+                    overflow: hidden;
+                    .left-group {
+                        width: 190px;
+                        float: left;
+                        li{
+                            width: 100%;
+                            height: 50px;
+                            background: url("https://www.xfz.cn/static/build/images/side-icon.png") no-repeat;
+                            background-size: 18%;
+                            margin-bottom: 20px;
+                            line-height: 50px;
+                            a{
+                                color: #878787;
+                                font-size: 14px;
+                            }
+                        }
+                        .zhihu{
+                            background-position: 0 0;
+                            padding-left: 60px;
+                            }
+                        .weibo{
+                            background-position: 0 -58px;
+                            padding-left: 60px;
+                        }
+                        .toutiao{
+                            background-position: 0 -112px;
+                            padding-left: 60px;
+                        }
+                    }
+
+                    .right-group{
+                        float: right;
+                        width: 120px;
+                        background: url("https://www.xfz.cn/static/build/images/xfz-wechat-share.png") no-repeat;
+                        background-size: 95%;
+                        .desc{
+                            padding-top: 110px;
+                            font-size: 14px;
+                            color: #878787;
+
+                        }
+                    }
+                }
+            }
+
+            .hot-news-group{
+                width: 315px;
+                .hot-list-group{
+                    padding: 0 20px;
+                    width: 100%;
+                    overflow: hidden;
+                    li{
+                        overflow: hidden;
+                        padding-bottom: 20px;
+                        padding-top: 20px;
+                        border-bottom: 1px solid #eee;
+                        .left-group{
+                            float: left;
+                            position: relative;
+                            width: 180px;
+                            height: 120px;
+                            .desc{
+                                a{
+                                    font-size: 15px;
+                                    color: #212121;
+                                }
+                            }
+                            .more{
+                                .category {
+                                    position: absolute;
+                                    float: left;
+                                    left: 0;
+                                    bottom: 0;
+                                    a {
+                                        color: #465bff;
+                                    }
+                                }
+                                .pub-time{
+                                    position: absolute;
+                                    float: right;
+                                    color: $assistColor;
+                                    right: 0;
+                                    bottom: 0;
+                                }
+                            }
+                        }
+                        .right-group{
+                            width: 120px;
+                            height: 120px;
+                            float: right;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

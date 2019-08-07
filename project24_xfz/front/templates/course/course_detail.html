@@ -1,0 +1,140 @@
+{% extends 'base/front_base.html' %}
+
+{% block title %}
+    课程详情
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/course/course_detail.min.css' %}">
+    <script src="{% static 'videojs/video.min.js' %}"></script>
+    <script src="{% static 'videojs/videojs-contrib-hls.min.js' %}"></script>
+    <script src="{% static 'videojs/videojs-contrib-quality-levels.min.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.bdstatic.com/jwplayer/latest/cyberplayer.js"></script>
+    <script src="{% static 'js/course_detail.min.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="course-nav">
+            <div class="nav-container">
+                <h3 class="title">在线课堂</h3>
+                <ul class="nav-list" style="list-style-type: none;">
+                    <li class="active"><a  href="#" style="text-decoration: none">最新课堂</a></li>
+                    <li><a href="#" style="text-decoration: none">投资人说</a></li>
+                    <li><a href="#" style="text-decoration: none">明星案列</a></li>
+                    <li><a href="#" style="text-decoration: none">创业知识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="course-wrapper">
+                <div class="course-info">
+                    <p class="course-title">
+                        {{ courses.title }}
+                    </p>
+                    <div class="price-group">
+                        <div class="share-group">
+                            <span class="title">分享至：</span>
+                        </div>
+                        <div class="buy-group">
+                            <!--<span class="price">￥4399.0</span>
+                            <a href="#" class="buy-btn" style="text-decoration: none">
+                                购买课程
+                            </a>-->
+                            {% if courses.price > 0 %}
+                                {% if not buyed %}
+                                    <span class="price">￥{{ courses.price }}</span>
+                                    <a href="{% url 'course:course_order' course_id=courses.pk %}" class="pay buy-btn" style="text-decoration: none">立即购买</a>
+                                {% endif %}
+                            {% else %}
+                                <a href="javascript:void(0);" class="free buy-btn" style="text-decoration: none">免费</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="video-group">
+                    <span id="video-info" hidden data-video-url="{{ courses.video_url }}" data-cover-url="{{ courses.cover_url }}"
+                    data-course-id="{{ courses.pk }}"></span>
+                    <div id="playercontainer"></div>
+                </div>
+            </div>
+            <div class="bottom-group">
+                <div class="course-wrapper">
+                    <div class="item-group">
+                        <p class="item-title">{{ courses.category.name }}</p>
+                        <div class="teacher-group">
+                            <div class="avatar-group">
+                                <img class="avatar" src="{{ courses.teacher.avatar }}" alt="">
+                            </div>
+                            <div class="teacher-info">
+                                <p class="teacher-name">{{ courses.teacher.username }}</p>
+                                <p class="teacher-desc">{{ courses.teacher.profile }}</p>
+                            </div>
+                        </div>
+                        <p class="item-content">{{ courses.teacher.position }}</p>
+                    </div>
+                    <div class="item-group">
+                        <p class="item-title">课程简介</p>
+                        <p class="item-content">{{ courses.profile|safe }}
+                        <p><br/></p>
+                        <p class="item-content">添加微信号：onemoreholiday，免费完整课程。</p>
+                        </p>
+                    </div>
+                    <div class="item-group">
+                        <p class="item-title">课程大纲</p>
+                        <p class="item-content">
+                            <ul class="item-content" style="list-style-type: disc;margin-left: 15px">
+                                <li><p>面对危机公关，多快算快？</p></li>
+                                <li><p>面对危机公关，谁出面做解释和声明最有效？</p></li>
+                                <li><p>案例分析：戴尔和罗永浩</p></li>
+                                <li><p>危机公关，真的是“唯快不破”吗？</p></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="item-group">
+                        <p class="item-title">帮助中心</p>
+                        <p class="item-content">
+                            1. 购买后的课程在线可反复观看学习，视频有效期以具体课程信息为准。 <br>
+                            2. 课程暂不支持下载观看，均为在线观看视频。 <br>
+                            3. 课程一经购买，不可转让、不可退款；仅限购买账号观看。 <br>
+                            4. 如有问题请咨询客服饭桌君： 电话：18618172287   微信：fanzhuojun888 <br>
+                        </p>
+                    </div>
+                    <div class="item-group">
+                        <p class="item-title">关于小饭桌创业在线课堂</p>
+                        <p class="item-content">
+                            小饭桌创业课堂在线课堂是小饭桌旗下的线上视频课程产品，汇聚顶级创业大咖导师、行业资深专家，致力于用系统、垂直的知识体系让创业者认知升级、技能进阶。小饭桌创业课堂在线课堂用知识陪伴创业者从平凡到卓越！
+                        </p>
+                    </div>
+                </div>
+                <div class="recommend-wrapper">
+                    <p class="recommend-title">推荐课程</p>
+                    <ul class="course-list" style="list-style:none">
+                        <li>
+                            <a href="#">
+                                <div class="course-info-group">
+                                    <p class="course-title">创业CEO如何避免技术决策错误</p>
+                                    <p class="teacher">知了课堂CEO</p>
+                                </div>
+                                <div class="thumbnail-group">
+                                    <img class="thumbnail" src="https://static-image.xfz.cn/1537239292_214.png-course.list.small" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="course-info-group">
+                                    <p class="course-title">创业CEO如何避免技术决策错误</p>
+                                    <p class="teacher">知了课堂CEO</p>
+                                </div>
+                                <div class="thumbnail-group">
+                                    <img class="thumbnail" src="https://static-image.xfz.cn/1537239292_214.png-course.list.small" alt="">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

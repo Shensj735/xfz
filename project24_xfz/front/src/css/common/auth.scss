@@ -1,0 +1,126 @@
+body{
+}
+
+.mask-wrapper{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  overflow-y: scroll;
+  display: none;
+  z-index: 100;
+  .auth-wrapper{
+    $authWrapperHeight:540px;
+    $authWrapperWidth:400px;
+    width: $authWrapperWidth;
+    height: $authWrapperHeight;
+    margin: 80px auto;
+    .close-wrapper{
+      width: 100%;
+      height: 40px;
+      background: #fff;
+      .close-btn{
+        display: inline-block;
+        line-height: 40px;
+        float: right;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+    }
+    .auth-inner-wrapper{
+      width: 100%;
+      height: $authWrapperHeight - 40px;
+      position: relative;
+      overflow: hidden;
+      .scroll-wrapper{
+        width: $authWrapperWidth * 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        .auth-group{
+          width: $authWrapperWidth;
+          padding: 0 20px 20px;
+          box-sizing: border-box;
+          background: #fff;
+          .top-group{
+            height: 38px;
+            border-bottom: 1px solid #c9c9c9;
+            .title{
+              float: left;
+              color: #212121;
+              border-bottom: 5px solid #00BFFF;
+              line-height: 33px;
+            }
+            .switch{
+              float: right;
+              color: #00BFFF;
+              line-height: 33px;
+            }
+          }
+          .form-group{
+            margin-top: 20px;
+            .input-group{
+              margin-bottom: 20px;
+              .form-control{
+                border: 1px solid #ccc;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                height: 40px;
+                outline: none;
+              }
+              .remember-label{
+                font-size: 14px;
+              }
+              .submit-btn{
+                height: 40px;
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                background: #00BFFF;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+              }
+              .short-input-group{
+                margin-bottom: 20px;
+                width: 250px;
+                height: 100%;
+                float: left;
+              }
+              .input-group-addon{
+                float: right;
+                width: 100px;
+                height: 40px;
+                .sms-captcha-btn{
+                  width: 100%;
+                  height: 100%;
+                  border: 1px solid #00BFFF;
+                  color: #00bfff;
+                  display: inline-block;
+                  line-height: 40px;
+                  text-align: center;
+                  box-sizing: border-box;
+                  cursor: pointer;
+                }
+                .disabled{
+                  color: #ccc;
+                  border-color: #ccc;
+                }
+              }
+            }
+          }
+        }
+        .signin-group{
+          float: left;
+        }
+        .signup-group{
+          float: left;
+        }
+      }
+    }
+  }
+}

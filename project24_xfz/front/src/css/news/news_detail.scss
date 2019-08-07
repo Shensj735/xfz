@@ -1,0 +1,134 @@
+@import "../common/header";
+
+.main{
+    .wrapper{
+        .main-content-wrapper{
+          box-sizing: border-box;
+            padding: 20px;
+            .news-wrapper{
+                .title{
+                  font-size: 24px;
+                  color:#212121;
+                  font-weight: 400;
+                  margin-bottom: 20px;
+                  }
+                .news-info{
+                  overflow: hidden;
+                  height: 28px;
+                  line-height: 28px;
+                  color: $assistColor;
+                    .info-group{
+                      float: left;
+                      .author-name{
+                      }
+                      .pub-time{
+                        margin: 0 0 20px 10px;
+                      }
+                      .category{
+                        margin: 0 10px;
+
+                      }
+                    }
+                  .share-group{
+                    float: right;
+                    span{
+                        float: left;
+                      }
+                    .share-item {
+                      float: left;
+                      width: 28px;
+                      height: 28px;
+                      background: url("https://www.xfz.cn/static/build/images/share.png") no-repeat;
+                      background-size: 200%;
+                      .weixin {
+                      }
+
+                      .weibo {
+                        background-position: -40px 0;
+                      }
+                    }
+                  }
+                }
+              .article{
+                padding-top: 10px;
+                line-height: 35px;
+                img{
+                  max-width: 100%;
+                }
+              }
+            }
+            .comment-wrapper{
+              padding-top: 20px;
+              border-top: 1px solid #c9c9c9;
+              .title{
+                font-weight: 400;
+                font-size: 17px;
+                color: #212121;
+              }
+              .comment-textarea{
+                margin: 10px 0;
+                width: 100%;
+                resize: none;
+                outline: none;
+                font-size: 14px;
+                padding: 5px 10px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                border-radius: 5px;
+              }
+              .nologin-textarea{
+                height: 40px;
+                line-height: 26px;
+              }
+              .login-textarea{
+                height: 80px;
+              }
+              .submit-btn-group{
+                text-align: right;
+                .submit-btn{
+                  margin-top: 10px;
+                  font-size: 14px;
+                  padding: 6px 10px;
+                  border: none;
+                  background: deepskyblue;
+                  border-radius: 5px;
+                  color: #ffffff;
+                  cursor: pointer;
+                }
+              }
+              .comment-list{
+                margin-top: 20px;
+                li{
+                  margin-bottom: 20px;
+                  border-bottom: 1px solid #c9c9c9;
+                  padding-bottom: 30px;
+                  .comment-info{
+                    padding-bottom: 20px;
+                    overflow: hidden;
+                    height: 40px;
+                    line-height: 40px;
+                    color: $assistColor;
+                    font-size: 16px;
+                    .avatar {
+                      float: left;
+                      width: 40px;
+                      height: 40px;
+                      border-radius: 50%;
+                    }
+                    .author{
+                      float: left;
+                      margin-left: 10px;
+                    }
+                    .pub-time{
+                      float: right;
+                    }
+                  }
+                  .comment-content{
+                    margin-left: 50px;
+                  }
+                }
+              }
+            }
+        }
+    }
+}

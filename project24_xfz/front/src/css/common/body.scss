@@ -1,0 +1,25 @@
+@import "init";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: #f8f8f8;
+}
+
+.main{
+    width: 100%;
+    margin-top: 100px;
+
+    .wrapper{
+        width: 1170px;
+        margin: 0 auto;
+        overflow: hidden;
+        .main-content-wrapper {
+            width: $mainWidth;
+            float: left;
+            background: white;
+        }
+    }
+}

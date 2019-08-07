@@ -1,0 +1,152 @@
+@import "init";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: #f8f8f8;
+}
+.footer{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #c9c9c9;
+    width: 100%;
+    .top-group{
+        width: 100%;
+        background: #2e2e2e;
+        padding: 27px;
+        box-sizing: border-box;
+        .top-inner-group{
+            width: 100%;
+            padding-left: 70px;
+            position: relative;
+            .logo-box{
+                margin-top: 10px;
+                width: 160px;
+                height: 60px;
+                background: url("https://www.xfz.cn/static/build/images/logo-test.png") no-repeat;
+                float: left;
+                background-size: 100%;
+            }
+            .detail-group{
+                margin-left: 250px;
+                .line1{
+                    overflow: hidden;
+                    .links{
+                        float: left;
+                        overflow: hidden;
+                        li{
+                            float: left;
+                            padding: 0 10px;
+                            border-right: 1px solid #c9c9c9;
+                            a{
+                                color: #c9c9c9;
+                            }
+                            &:first-of-type{
+                                padding-left: 0;
+                            }
+                            &:last-of-type{
+                                border-right: none;
+                            }
+                        }
+                    }
+                    .about-us{
+                        overflow: hidden;
+                        .title{
+                            margin-left: 20px;
+                            float: left;
+                        }
+                        .social-group{
+                            overflow: hidden;
+                            li{
+                                overflow: hidden;
+                            }
+                            .weixin{
+                                float: left;
+                                height: 30px;
+                                overflow: hidden;
+                                margin-left: 8px;
+                                background: url("https://www.xfz.cn/static/build/images/wx-icon.png") no-repeat;
+                                background-size: 32%;
+                                cursor: pointer;
+                                &:hover .wx-qrcode{
+                                    display: block;
+                                }
+                                .wx-qrcode{
+                                    position: absolute;
+                                    background: url("https://www.xfz.cn/static/build/images/xfz-wechat-share.png") no-repeat;
+                                    background-size: 80%;
+                                    width: 200px;
+                                    height: 200px;
+                                    right: 450px;
+                                    top: -180px;
+                                    display: none;
+                                }
+                                a{
+                                    color: #fff;
+                                }
+                                .text{
+                                    line-height: 22px;
+                                    float: left;
+                                    height: 40px;
+                                    margin-left: 35px;
+                                }
+                            }
+                            .weibo{
+                                float: left;
+                                overflow: hidden;
+                                height: 30px;
+                                margin-left: 30px;
+                                background: url("https://www.xfz.cn/static/build/images/wx-icon.png") no-repeat;
+                                background-size: 18%;
+                                cursor: pointer;
+                                &:hover .wb-qrcode{
+                                    display: block;
+                                }
+                                .wb-qrcode{
+                                    position: absolute;
+                                    background: url("https://www.xfz.cn/static/build/images/xfz-wechat-share.png") no-repeat;
+                                    background-size: 80%;
+                                    width: 200px;
+                                    height: 200px;
+                                    right: 350px;
+                                    top: -180px;
+                                    display: none;
+                                }
+                                a{
+                                    color: #fff;
+                                }
+                                .text{
+                                    float: left;
+                                    height: 30px;
+                                    margin-left: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .line2{
+                    overflow: hidden;
+                    margin-top: 20px;
+                    .address{
+                        float: left;
+                    }
+                    .contact{
+                        margin-left: 40px;
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
+    .bottom-group{
+        overflow: hidden;
+        margin: 0 auto;
+        background: #555555;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 40px;
+    }
+}
